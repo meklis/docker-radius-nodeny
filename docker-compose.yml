@@ -22,6 +22,7 @@ services:
     
     volumes:
     - ".env:/www/.env"
+    - "./logs:/www/logs"
     build: api
     container_name: radius-api
     network_mode: host
