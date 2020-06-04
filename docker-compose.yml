@@ -2,6 +2,7 @@ version: '3.5'
 
 x-defaults: &defaults
   restart: always
+#  privileged: true
   logging:
     driver: json-file
     options:
@@ -18,8 +19,9 @@ services:
     network_mode: host
   radius-api:
     <<: *defaults
+    
     volumes:
-    - "${PWD}/.env:/www/.env"
+    - ".env:/www/.env"
     build: api
     container_name: radius-api
     network_mode: host
