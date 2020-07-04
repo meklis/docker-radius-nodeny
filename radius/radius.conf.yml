@@ -32,7 +32,7 @@ api:
       enabled: true
       expire_timeout: 60m
     alive_checking:
-      enabled: true
+      enabled: false
       disable_timeout: 5s # На это время API-адрес будет исключен из списка
     addresses:
       - ${API_ADDR}/radius-request

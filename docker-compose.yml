@@ -27,3 +27,4 @@ services:
     - "${PWD}/logs/:/www/logs/"
     build: api
     container_name: radius-api
+
