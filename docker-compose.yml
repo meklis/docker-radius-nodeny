@@ -1,8 +1,8 @@
-version: '3.5'
+version: '3.7'
+
 
 x-defaults: &defaults
-  restart: always
-#  privileged: true
+  privileged: true
   logging:
     driver: json-file
     options:
@@ -10,19 +10,21 @@ x-defaults: &defaults
       max-file: "5"
   env_file:
     - .env
+  restart: unless-stopped
 
 services:
   radius-server:
     <<: *defaults
     build: radius
     container_name: radius-server
-    network_mode: host
+    ports:
+    - "0.0.0.0:1812:1812/udp"
+
   radius-api:
     <<: *defaults
-    
     volumes:
-    - ".env:/www/.env"
-    - "./logs:/www/logs"
+    - "${PWD}/.env:/www/.env"
+    - "${PWD}/logs/:/www/logs/"
     build: api
     container_name: radius-api
-    network_mode: host
+

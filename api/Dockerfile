@@ -1,7 +1,7 @@
 FROM ubuntu:bionic
 LABEL maintainer="Max Boyar <max.boyar.a@gmail.com>"
-
-ENV API_VERSION=0.0.8a
+ 
+ENV API_VERSION=0.0.9
 
 ENV TZ=Europe/Kiev
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
