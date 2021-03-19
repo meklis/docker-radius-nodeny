@@ -1,6 +1,6 @@
 FROM ubuntu:bionic
 LABEL maintainer="Max Boyar <max.boyar.a@gmail.com>"
-
+ 
 ENV API_VERSION=0.0.9
 
 ENV TZ=Europe/Kiev
